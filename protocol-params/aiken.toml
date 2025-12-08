@@ -1,0 +1,56 @@
+name = "midnight/protocol-params"
+version = "0.0.0"
+compiler = "v1.1.17"
+plutus = "v3"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'midnight/protocol-params'"
+
+[repository]
+user = "midnightntwrk"
+project = "mgdoc-claim-enablement"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v2.2.0"
+source = "github"
+
+[[dependencies]]
+name = "aiken-lang/fuzz"
+version = "main"
+source = "github"
+
+[config.default]
+one_shot_tx_hash = "one_shot_one_kill_one"
+one_shot_output_index = 0
+protocol_params_policy = "protocol_params_policy"
+
+
+[config.preview]
+# PHIL CHANGE THIS VALUE HERE
+one_shot_output_index = 0
+
+[config.preview.one_shot_tx_hash]
+# PHIL CHANGE THIS VALUE HERE
+bytes = "3e8b3d0bda81efcd1ce86d17b7764e55551cec6783f90bbc31069d69"
+encoding = "hex"
+
+[config.preview.protocol_params_policy]
+# Automated via compile.sh *do not edit*
+bytes = "f94a7d9092d5115d23b2d0d9179578faaccbe634903b8ba15e6478f5"
+encoding = "hex"
+
+
+[config.mainnet]
+# PHIL CHANGE THIS VALUE HERE
+one_shot_output_index = 0
+
+[config.mainnet.one_shot_tx_hash]
+# PHIL CHANGE THIS VALUE HERE
+bytes = "3e8b3d0bda81efcd1ce86d17b7764e55551cec6783f90bbc31069d69"
+encoding = "hex"
+
+[config.mainnet.protocol_params_policy]
+# Automated via compile.sh *do not edit*
+bytes = "f94a7d9092d5115d23b2d0d9179578faaccbe634903b8ba15e6478f5"
+encoding = "hex"

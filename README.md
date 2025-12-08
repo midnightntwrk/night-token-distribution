@@ -1,72 +1,32 @@
-# Midnight Template Repository
+# Midnight Glacier Drop on Cardano
 
-This GitHub repository should be used as a template when creating a new Midnight GitHub repository.
-The template is configured with default repository settings and a set of default files that are expected to exist in all Midnight GitHub repositories.
+This repository contains code and documents related to the distribution of Midnight's NIGHT tokens.  The distribution program is called the [Midnight Glacier Drop](https://www.midnight.gd/) program.
 
-### LICENSE
+## About the Midnight Glacier Drop
 
-Apache 2.0.
+The distribution program occurs in phases:
+1. **Glacier Drop** - All the tokens are allocated to addresses on a set of widely used blockchains and can be claimed by eligible participants.
+2. **Scavenger Mine** - Tokens unclaimed during the previous phase are processed as participants interact with a system that requires proof of having solved certain cryptographic problems.
+3. **Lost-and-Found** - Participants who would have been eligible to claim in the Glacier Drop phase, but who did not, can still claim a fraction of their allocated NIGHT.
 
-### README.md
+The first two phases occur prior to the launch of the Midnight blockchain, so they cannot occur on Midnight itself.  Instead, the Cardano blockchain provides the infrastructure.  The process of claiming NIGHT in these first two phases associates the claimed NIGHT with a Cardano address (the "destination" address).
 
-Provides a brief description for users and developers who want to understand the purpose, setup, and usage of the repository.
+When NIGHT is first claimed, it is "frozen."  (Thus the name Glacier Drop.)  During this time, it cannot be transferred.  After the completion of the first two phases, the NIGHT begins to "thaw"; it can be transferred to its destination wallet address and then held or transferred, as the owner chooses.  Transferring claimed NIGHT to its destination is called *redeeming* the claim or the *redemption* process.
 
-### SECURITY.md
+## About This Code
 
-Provides a brief description of the Midnight Foundation's security policy and how to properly disclose security issues.
+The code in this repository implements the Cardano smart contracts that define NIGHT and govern the claim and redemption processes.  You will see the acronym `MGDOC` in directory and variable names; it stands for "Midnight Glacier Drop on Cardano."
 
-### CONTRIBUTING.md
+The main subdirectories here are:
+* `mgdoc/src` - contains the Plutus code that governs the smart contracts on Cardano and checks the validity of transactions
+* `mgdoc/transactions` - contains the off-chain code that constructs the transactions
+* `protocol-params` - contains Aiken code that implements a set of controlling parameters for the Night contract, protected by multi-signature scheme
 
-Provides guidelines for how people can contribute to the Midnight project.
+## What Else Is Here?
 
-### CODEOWNERS
+This code has been audited by trusted third parties, and the audit reports are also here.
+* `glacier-drop-audit` - contains the report on the audit of the `mgdoc` and `protocol-params` code
 
-Defines repository ownership rules.
+## License
 
-### ISSUE_TEMPLATE
-
-Provides templates for reporting various types of issues, such as: bug report, documentation improvement and feature request.
-
-### PULL_REQUEST_TEMPLATE
-
-Provides a template for a pull request.
-
-### CLA Assistant
-
-The Midnight Foundation appreciates contributions, and like many other open source projects asks contributors to sign a contributor
-License Agreement before accepting contributions. We use CLA assistant (https://github.com/cla-assistant/cla-assistant) to streamline the CLA
-signing process, enabling contributors to sign our CLAs directly within a GitHub pull request.
-
-### Dependabot
-
-The Midnight Foundation uses GitHub Dependabot feature to keep our projects dependencies up-to-date and address potential security vulnerabilities.
-
-### Checkmarx
-
-The Midnight Foundation uses Checkmarx for application security (AppSec) to identify and fix security vulnerabilities.
-All repositories are scanned with Checkmarx's suite of tools including: Static Application Security Testing (SAST), Infrastructure as Code (IaC), Software Composition Analysis (SCA), API Security, Container Security and Supply Chain Scans (SCS).
-
-### Unito
-
-Facilitates two-way data synchronization, automated workflows and streamline processes between: Jira, GitHub issues and Github project Kanban board.
-
-# TODO - New Repo Owner
-
-### Software Package Data Exchange (SPDX)
-Include the following Software Package Data Exchange (SPDX) short-form identifier in a comment at the top headers of each source code file.
-
-
- <I>// This file is part of <B>REPLACE WITH REPO-NAME</B>.<BR>
- // Copyright (C) 2025 Midnight Foundation<BR>
- // SPDX-License-Identifier: Apache-2.0<BR>
- // Licensed under the Apache License, Version 2.0 (the "License");<BR>
- // You may not use this file except in compliance with the License.<BR>
- // You may obtain a copy of the License at<BR>
- //<BR>
- //	https://www.apache.org/licenses/LICENSE-2.0<BR>
- //<BR>
- // Unless required by applicable law or agreed to in writing, software<BR>
- // distributed under the License is distributed on an "AS IS" BASIS,<BR>
- // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<BR>
- // See the License for the specific language governing permissions and<BR>
- // limitations under the License.</I>
+This code is provided by the Midnight Foundation and licensed under the Apache License, version 2.0.
